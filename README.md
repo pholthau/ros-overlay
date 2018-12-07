@@ -25,7 +25,6 @@ emerge ros-kinetic/desktop_full
 Known issues & workarounds
 --------------------------
 
-
 **multiple packages failing**: (https://github.com/ros/ros-overlay/issues/711)
 ```
 echo '>dev-util/cmake-3.12.3' >> /etc/portage/package.mask/ros
@@ -33,20 +32,20 @@ echo '>dev-util/cmake-3.12.3' >> /etc/portage/package.mask/ros
 
 **multiple python issues**
 To prevent some known issues with python 3, enter the following in
-`/etc/portage/package.use/ros-overlay`:
+`/etc/portage/package.use/ros`:
 ```
 ros-*/* PYTHON_TARGETS: -* python2_7
 ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
 ```
 
 **blockers because of older versions of icu**
+```
 echo '=dev-qt/qtcore:4 -icu' >> /etc/portage/package.use/ros
+```
 
 **emerge sci-libs/gazebo fails**: (https://github.com/ros/ros-overlay/issues/526)
 ```
 ln -s /usr/include/ignition/math3/ignition/math /usr/include/ignition/math
-```
-```
 echo '>=dev-games/ogre-1.10.11' >> /etc/portage/package.mask/ros
 ```
 Contributing
