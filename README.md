@@ -10,12 +10,14 @@ For instructions, please look to the [ROS wiki](http://wiki.ros.org/ROS/Installa
 Quickstart
 ----------
 
-Enable and sync the overlay:
+1. Enable and sync the overlay:
 ```
 eselect repository enable ros-overlay
 emaint sync -r ros-overlay
 ````
-Install ros desktop full, e.g., kinetic desktop full (recommended):
+2. Apply known issues section
+
+3. Install ros desktop full, e.g., kinetic desktop full (recommended):
 ```
 emerge ros-kinetic/desktop_full
 ```
@@ -32,6 +34,9 @@ Enter the following in `/etc/portage/package.use/ros-overlay`
 ros-*/* PYTHON_TARGETS: -* python2_7
 ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
 ```
+**blockers because of older versions of icu*
+
+echo '=dev-qt/qtcore:4 -icu' >> /etc/portage/package.use/ros
 
 **emerge sci-libs/gazebo fails**: (https://github.com/ros/ros-overlay/issues/526)
 
