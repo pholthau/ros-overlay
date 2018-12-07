@@ -34,7 +34,7 @@ ros-*/* PYTHON_TARGETS: -* python2_7
 ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
 ```
 
-**blockers because of older versions of icu*
+**blockers because of older versions of icu**
 
 echo '=dev-qt/qtcore:4 -icu' >> /etc/portage/package.use/ros
 
