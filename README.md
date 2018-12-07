@@ -33,6 +33,7 @@ To prevent some known issues with python 3, enter the following in
 ros-*/* PYTHON_TARGETS: -* python2_7
 ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
 ```
+
 **blockers because of older versions of icu*
 
 echo '=dev-qt/qtcore:4 -icu' >> /etc/portage/package.use/ros
