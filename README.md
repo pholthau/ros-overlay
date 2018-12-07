@@ -2,7 +2,31 @@ ros-overlay
 ===========
 This overlay contains ebuilds for the Robot Operating System (ROS).
 
+Using the Overlay
+=================
+
 For instructions, please look to the [ROS wiki](http://wiki.ros.org/ROS/Installation).
+
+Quickstart
+----------
+
+Enable and sync the overlay:
+```
+eselect repository enable ros-overlay
+emaint sync -r ros-overlay
+````
+To prevent some known issues, configure your system like such:
+
+`/etc/portage/package.use/ros-overlay`
+```
+ros-*/* PYTHON_TARGETS: -* python2_7
+ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
+```
+
+Install ros desktop full, e.g., kinetic desktop full (recommended):
+```
+emerge ros-kinetic/desktop_full
+```
 
 Contributing
 =============
