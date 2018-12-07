@@ -1,14 +1,12 @@
-ros-overlay
-===========
+# ros-overlay
+
 This overlay contains ebuilds for the Robot Operating System (ROS).
 
-Using the Overlay
-=================
+## Using the Overlay
 
 For instructions, please look to the [ROS wiki](http://wiki.ros.org/ROS/Installation).
 
-Quickstart
-----------
+### Quickstart
 
 1. Enable and sync the overlay:
 ```
@@ -22,15 +20,18 @@ emaint sync -r ros-overlay
 emerge ros-kinetic/desktop_full
 ```
 
-Known issues & workarounds
---------------------------
+### Known issues & workarounds
 
-**multiple packages failing** (https://github.com/ros/ros-overlay/issues/711)
+#### Multiple packages failing
+
+Prevent cmake and catkin related fails, cf https://github.com/ros/ros-overlay/issues/711
+by masking newer cmake versions:
 ```
 echo '>dev-util/cmake-3.12.3' >> /etc/portage/package.mask/ros
 ```
 
-**multiple python issues**
+#### Multiple python issues
+
 To prevent some known issues with python 3, enter the following in
 `/etc/portage/package.use/ros`:
 ```
@@ -38,32 +39,35 @@ ros-*/* PYTHON_TARGETS: -* python2_7
 ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
 ```
 
-**blockers because of older versions of icu**
+#### Blockers because of older versions of icu
+
 ```
 echo '=dev-qt/qtcore:4 -icu' >> /etc/portage/package.use/ros
 ```
 
-**emerge sci-libs/gazebo fails** (https://github.com/ros/ros-overlay/issues/526)
+#### Gazebo fails to build
+
+To allow `sci-libs/gazebo` to build, cf. (https://github.com/ros/ros-overlay/issues/526)
+the following workaround(s) are necessary:
 ```
 ln -s /usr/include/ignition/math3/ignition/math /usr/include/ignition/math
 echo '>=dev-games/ogre-1.10.11' >> /etc/portage/package.mask/ros
 ```
-Contributing
-=============
+## Contributing
 
 There's a lot of ways to help out.
 
-My Build Failed:
------------------
+### My Build Failed
+
 In managing some 6000 ebuilds, one runs into a few hickups. Please don't hesitate
 to file an issue!
 
-### List of Failures
+#### List of Failures
 As changes progress, things break. You can find a list of failures
 [here](https://gist.github.com/allenh1/8583d09f6ef4273b6e364e3578edad3d) in the form of a GitHub gist.
 
-Superflore:
-------------
+#### Superflore:
+
 [Superflore](https://github.com/ros-infrastructure/superflore) is the tool used to
 generate almost every ebuild in this repository. Since, frequently, the issue is that
 an ebuild simply needs to be regenerated, I'll document how to use Superflore to do so.
@@ -86,7 +90,7 @@ If you cloned the overlay and want to use the stashed version, add `--output-rep
 6. The above command will file a PR under your name to this overlay.
 
 
-### Checking Packages with Superflore
+#### Checking Packages with Superflore
 You can also check if packages are building using `superflore`.
 
 ```
