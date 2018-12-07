@@ -15,14 +15,6 @@ Enable and sync the overlay:
 eselect repository enable ros-overlay
 emaint sync -r ros-overlay
 ````
-To prevent some known issues, configure your system like such:
-
-`/etc/portage/package.use/ros-overlay`
-```
-ros-*/* PYTHON_TARGETS: -* python2_7
-ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
-```
-
 Install ros desktop full, e.g., kinetic desktop full (recommended):
 ```
 emerge ros-kinetic/desktop_full
@@ -30,6 +22,16 @@ emerge ros-kinetic/desktop_full
 
 Known issues & workarounds
 --------------------------
+
+**multiple python issues**
+
+To prevent some known issues, configure your system like such:
+
+Enter the following in `/etc/portage/package.use/ros-overlay`
+```
+ros-*/* PYTHON_TARGETS: -* python2_7
+ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
+```
 
 **emerge sci-libs/gazebo fails**: (https://github.com/ros/ros-overlay/issues/526)
 
