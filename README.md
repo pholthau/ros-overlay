@@ -31,7 +31,7 @@ emerge ros-kinetic/desktop_full
 Known issues & workarounds
 --------------------------
 
-**emerge sci-libs/gazebo fails**: (ros/ros-overlay#526)
+**emerge sci-libs/gazebo fails**: (https://github.com/ros/ros-overlay/issues/526)
 
 ```
 ln -s /usr/include/ignition/math3/ignition/math /usr/include/ignition/math
@@ -41,7 +41,7 @@ ln -s /usr/include/ignition/math3/ignition/math /usr/include/ignition/math
 echo >=dev-games/ogre-1.10.11 >> /etc/portage/package.mask/ros
 ```
 
-**multiple packages failing**: (ros/ros-overlay#711)
+**multiple packages failing**: (https://github.com/ros/ros-overlay/issues/711)
 
 ```
 echo >dev-util/cmake-3.12.3 >> /etc/portage/package.mask/ros
