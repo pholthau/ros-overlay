@@ -27,9 +27,8 @@ Known issues & workarounds
 
 **multiple python issues**
 
-To prevent some known issues, configure your system like such:
-
-Enter the following in `/etc/portage/package.use/ros-overlay`
+To prevent some known issues with python 3, enter the following in
+`/etc/portage/package.use/ros-overlay`:
 ```
 ros-*/* PYTHON_TARGETS: -* python2_7
 ros-*/* PYTHON_SINGLE_TARGET: -* python2_7
