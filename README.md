@@ -28,6 +28,25 @@ Install ros desktop full, e.g., kinetic desktop full (recommended):
 emerge ros-kinetic/desktop_full
 ```
 
+Known issues & workarounds
+--------------------------
+
+**emerge sci-libs/gazebo fails**: ros/ros-overlay#526
+
+```
+ln -s /usr/include/ignition/math3/ignition/math /usr/include/ignition/math
+```
+
+```
+echo >=dev-games/ogre-1.10.11 >> /etc/portage/package.mask/ros
+```
+
+**multiple packages failing**: ros-ros-overlay#711
+
+```
+echo >dev-util/cmake-3.12.3 >> /etc/portage/package.mask/ros
+```
+
 Contributing
 =============
 
