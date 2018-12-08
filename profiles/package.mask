@@ -1,2 +1,5 @@
 #breaks compilation of gazebo:0/7
 >=dev-games/ogre-1.10.11
+
+#breaks -lpthread linking
+>dev-util/cmake-3.12.3
