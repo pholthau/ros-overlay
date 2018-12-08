@@ -1,0 +1,6 @@
+# only use python 2.7 per default
+ros-*/* PYTHON_TARGETS: python2_7
+ros-*/* PYTHON_SINGLE_TAGET: python2_7
+
+# prevent old icu to be pulled (and possibly conflict with the current installation)
+dev-qt/qtcore:4 icu
