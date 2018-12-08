@@ -1,0 +1,2 @@
+#breaks compilation of gazebo:0/7
+>=dev-games/ogre-1.10.11
