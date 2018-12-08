@@ -1,0 +1,6 @@
+# only use python 2.7 per default
+python_targets_python3_5
+python_targets_python3_6
+
+python_single_target_python3_5
+python_single_target_python3_6
